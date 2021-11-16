@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
-const inventoryRouter = require('./inventoryRouter')
+const inventoryRouter = require('./routes/inventoryRouter')
 const PORT = 9000
 
 
@@ -15,7 +15,7 @@ async function main () {
 app.use(express.json())
 app.use(morgan('dev')) 
 
-app.use('/inventory', inventoryRouter)
+app.use('/Inventory', inventoryRouter)
 
 app.use((err, req, res, next) => {
     if(err.name === 'Unauthorized error'){
