@@ -26,4 +26,34 @@ export default function Auth(){
   function handleLogin(e){
     e.preventDefault()
     login(inputs)
-  }}
+  }
+  
+  return (
+    <div className="auth-container">
+      <h1>Todo App</h1>
+      {!toggle ? (
+        <>
+                  <AuthForm
+                      handleChange={handleChange}
+                      handleSubmit={handleLogin}
+                      inputs={inputs}
+                      btnText="Login"
+                      errMsg={errMsg}
+                  />
+                  <p onClick={() => setToggle((prev) => !prev)}>Not a member?</p>
+        </>
+      ) : (
+        <>
+       <AuthForm
+                          handleChange={handleChange}
+                          handleSubmit={handleSignup}
+                          inputs={inputs}
+                          btnText="Sign up"
+                          errMsg={errMsg}
+                      />
+                      <p onClick={() => setToggle((prev) => !prev)}>Already a member?</p>
+        </>
+      )}
+    </div>
+  );
+}
