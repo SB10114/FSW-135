@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
-const authRouter = require('./routes/authRouter')
+const authRouter = require('../../../week4/Assignments/mySQL-135-app/routes/authRouter')
 const PORT = 9000
 
 
