@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
 import IssuesForm from './IssuesForm'
 import IssuesList from './IssuesList'
-import Issues from './Issues'
+//import Issues from './Issues'
 import { UserContext } from '../context/UserProvider'
 
 export default function Profile() {
-    const {user: {userName}, addIssues, Issues} = useContext(UserContext)
+    const {user: {userName}, addIssues, issues} = useContext(UserContext)
     
     return (
         <div className = "profile">
@@ -13,7 +13,7 @@ export default function Profile() {
             <h3>Add Issues</h3>
             <IssuesForm addIssues={addIssues} />
             <h3>Your Issues</h3>
-            <IssuesList issues={Issues} />
+            <IssuesList issues={issues} />
         </div>
     )
 }

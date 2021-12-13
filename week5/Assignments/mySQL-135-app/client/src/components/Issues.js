@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Issues(props){
-  const { title, description, imgUrl} = props
+  const { title, description, imgUrl, _id} = props
   return (
     <div className="issues">
       <h1>{ title }</h1>

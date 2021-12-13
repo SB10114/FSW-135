@@ -18,11 +18,11 @@ async function main () {
 
 app.use(express.json())
 app.use(morgan('dev')) 
+
+
 app.use('/api', expressJwt({ secret: process.env.SECRET, algorithms:['sha1', 'RS256', 'HS256'] })) // req.user
-
-
-app.use('/', authRouter)
-app.use('/Comment', commentRouter)
+app.use('/', require('./routes/authRouter'))
+app.use('/Comment', require('./routes/commentRouter'))
 app.use('/Issue', issueRouter)
 
 
