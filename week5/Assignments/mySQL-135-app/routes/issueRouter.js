@@ -16,7 +16,7 @@ issueRouter.get("/", (req, res, next) => {
 })
 
 //GET one
-issueRouter.get("/:issuesId", (req, res, next) => {
+issueRouter.get("/getOne/:issuesId", (req, res, next) => {
     const findItem = req.params.issuesId
     issues.findOne({_id: findItem}, (err, issuesItem) => {
         if (err) {
@@ -57,6 +57,7 @@ issueRouter.delete("/:issuesId", (req, res, next) => {
 
   //Post 
   issueRouter.post("/", (req, res, next) => {
+    req.body.user = req.user._id
     const newItem = new issues(req.body)
     newItem.save((err, savedItem) => {
       if(err){

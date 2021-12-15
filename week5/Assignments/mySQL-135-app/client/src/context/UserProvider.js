@@ -67,7 +67,7 @@ export default function UserProvider(props) {
     }
 
     function getUserIssues() {
-        userAxios.post('/api/Issue/user')
+        userAxios.get('/api/Issue/user')
         .then(res => {
             setUserState(prevState => ({
                 ...prevState,

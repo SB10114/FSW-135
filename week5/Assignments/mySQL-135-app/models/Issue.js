@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-const issueSchema = new mongoose.Schema({
+const issueSchema = new Schema({
     title: {
         type: String,
         required: true
@@ -12,7 +13,7 @@ const issueSchema = new mongoose.Schema({
         type: Number
     },
     user: {
-        type: mongoose.Schema.Types.ObjectId, 
+        type: Schema.Types.ObjectId, 
         ref: 'User',
         required: true
     }
